@@ -4,10 +4,15 @@
 @import url('https://fonts.cdnfonts.com/css/sanfford');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: rgb(228, 218, 218);
   font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 .topoCanvas {
@@ -1019,8 +1024,6 @@ body {
   .edu-timeline-card { padding: 18px 20px; }
   .edu-timeline-card::before { left: -31px; }
 
-  
-
   .experience-section,
   .tools-section { padding: 48px 18px 64px; }
   .experience-panel,
@@ -1028,6 +1031,12 @@ body {
   .experience-meta div { grid-template-columns: 1fr; gap: 4px; }
   .experience-contribution-grid { grid-template-columns: 1fr; }
   .tool-card { grid-template-columns: 1fr; }
+
+  /* Navbar and hero responsiveness */
+  .left h1 { font-size: 48px; }
+  .nav-pill { flex-wrap: wrap; border-radius: 12px; padding: 6px; gap: 4px; }
+  .nav-link, .nav-btn { font-size: 11px; padding: 6px 10px; }
+  .img-wrapper img { width: 260px; height: 320px; }
 }
 
 /* ─── PROJECTS SECTION REDESIGN ─── */
@@ -1227,6 +1236,9 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
 }
 
 .redesign-pill:hover {
@@ -1247,6 +1259,28 @@ body {
   
   .projects-redesign-title {
     font-size: 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .projects-redesign-title {
+    font-size: 36px;
+  }
+  .projects-redesign-section {
+    padding: 80px 20px 60px;
+  }
+  .projects-redesign-reason-box {
+    padding: 20px;
+  }
+  .links-card-title {
+    font-size: 12px;
+  }
+  .projects-redesign-links-card {
+    padding: 24px;
+  }
+  .redesign-pill {
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }
 
