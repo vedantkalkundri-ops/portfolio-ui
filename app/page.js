@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TopoBackground from "./components/Topobackground";
 import IntroAnimation from "./components/IntroAnimation";
-import AIThinkingOrb from "./components/AIThinkingOrb";
 
 const projects = [
   {
@@ -104,6 +103,7 @@ export default function Home() {
   const [introComplete, setIntroComplete] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [activeProject, setActiveProject] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const fallback = setTimeout(() => setIntroComplete(true), 2600);
@@ -118,93 +118,100 @@ export default function Home() {
           <IntroAnimation onComplete={() => setIntroComplete(true)} />
         )}
       </AnimatePresence>
+      <section id="home" className="hero-section">
+        {/* ── Main page ── */}
+        <div className="hero">
+          <div className="hero-bg" aria-hidden="true" />
+          <TopoBackground />
 
-      {/* ── Main page ── */}
-      <div className="hero">
-        <div className="hero-bg" aria-hidden="true" />
-        <TopoBackground />
-
-        {/* PORTFOLIO logo */}
-        <motion.div
-          className="page-logo"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: introComplete ? 1 : 0 }}
-          transition={{ duration: 0.35, delay: introComplete ? 0.78 : 0 }}
-        >
-          PORTFOLIO
-        </motion.div>
-
-        {/* NAVBAR */}
-        <motion.nav
-          className="navbar"
-          initial={{ opacity: 0, y: -16 }}
-          animate={{
-            opacity: introComplete ? 1 : 0,
-            y: introComplete ? 0 : -16,
-          }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: introComplete ? 0.55 : 0 }}
-        >
-          <div className="nav-pill">
-            <a href="#home" className="nav-link active">Home</a>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#work" className="nav-link">Services</a>
-            <a href="#projects" className="nav-link">Projects</a>
-            <a href="#contact" className="nav-btn">Let's Talk</a>
-          </div>
-        </motion.nav>
-
-        {/* CONTENT */}
-        <motion.div
-          className="content"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: introComplete ? 1 : 0 }}
-          transition={{ duration: 0.9, delay: introComplete ? 0.35 : 0 }}
-        >
-          {/* LEFT TEXT */}
+          {/* PORTFOLIO logo */}
           <motion.div
-            className="left"
-            initial={{ x: -40, opacity: 0 }}
-            animate={introComplete ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.5 }}
+            className="page-logo"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: introComplete ? 1 : 0 }}
+            transition={{ duration: 0.35, delay: introComplete ? 0.78 : 0 }}
           >
-            <h1>
-              Anusha
-              Inamdar
-            </h1>
-            <p>SEO Content Writer crafting meaningful, high-ranking content.</p>
-            <motion.a
-              href="#work"
-              className="cta-btn"
-              initial={{ opacity: 0, y: 16 }}
-              animate={introComplete ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.85, duration: 0.6 }}
-            >
-              <span className="cta-btn-slide cta-btn-slide--1" />
-              <span className="cta-btn-slide cta-btn-slide--2" />
-              <span className="cta-btn-slide cta-btn-slide--3" />
-              <span className="cta-btn-text">View My Work →</span>
-            </motion.a>
+            PORTFOLIO
           </motion.div>
 
-          {/* RIGHT IMAGE */}
-          <motion.div
-            className="right"
-            initial={{ x: 80, opacity: 0, scale: 0.96 }}
-            animate={introComplete ? { x: 0, opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1.1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
+          {/* NAVBAR */}
+          <motion.nav
+            className="navbar"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{
+              opacity: introComplete ? 1 : 0,
+              y: introComplete ? 0 : -16,
+            }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: introComplete ? 0.55 : 0 }}
           >
+            <div className="nav-container">
+              <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+                <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+                <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+              </button>
+              <div className={`nav-pill ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+                <a href="#home" className="nav-link active" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+                <a href="#work" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
+                <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+                <a href="#contact" className="nav-btn" onClick={() => setIsMobileMenuOpen(false)}>Let's Talk</a>
+              </div>
+            </div>
+          </motion.nav>
+
+          {/* CONTENT */}
+          <motion.div
+            className="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: introComplete ? 1 : 0 }}
+            transition={{ duration: 0.9, delay: introComplete ? 0.35 : 0 }}
+          >
+            {/* LEFT TEXT */}
             <motion.div
-              className="img-wrapper"
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="left"
+              initial={{ x: -40, opacity: 0 }}
+              animate={introComplete ? { x: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.5 }}
             >
-              <img src="/profile.jpeg" alt="Anusha Inamdar" />
-              <div className="img-glow" />
+              <h1>
+                Anusha
+                Inamdar
+              </h1>
+              <p>SEO Content Writer crafting meaningful, high-ranking content.</p>
+              <motion.a
+                href="#projects"
+                className="cta-btn"
+                initial={{ opacity: 0, y: 16 }}
+                animate={introComplete ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.85, duration: 0.6 }}
+              >
+                <span className="cta-btn-slide cta-btn-slide--1" />
+                <span className="cta-btn-slide cta-btn-slide--2" />
+                <span className="cta-btn-slide cta-btn-slide--3" />
+                <span className="cta-btn-text">View My Work →</span>
+              </motion.a>
+            </motion.div>
+
+            {/* RIGHT IMAGE */}
+            <motion.div
+              className="right"
+              initial={{ x: 80, opacity: 0, scale: 0.96 }}
+              animate={introComplete ? { x: 0, opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1.1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
+            >
+              <motion.div
+                className="img-wrapper"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <img src="/profile.jpeg" alt="Anusha Inamdar" />
+                <div className="img-glow" />
+              </motion.div>
             </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
-
+        </div>
+      </section>
       {/* ── ABOUT SECTION ── */}
       <section id="about" className="about-section">
         <div className="about-name-row">
@@ -639,7 +646,7 @@ export default function Home() {
         </div>
       </section>
       {/* ── PROJECTS SECTION ── */}
-      
+
       {/* ── PROJECTS SECTION ── */}
       {/* ── PROJECTS SECTION (REDESIGN) ── */}
       <section id="projects" className="projects-redesign-section">
@@ -713,59 +720,38 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section>
-      {/* ── AI CONTACT SECTION ── */}
-      <section id="contact" className="contact-ai-section">
-        <AIThinkingOrb />
-        <div className="contact-ai-shell">
-          {/* Top Left */}
+      {/* ── REDESIGNED CONTACT SECTION ── */}
+      <section id="contact" className="contact-redesign-section">
+        <div className="contact-redesign-wave"></div>
+        <div className="contact-redesign-container">
           <motion.div
-            className="contact-ai-top-left"
-            initial={{ opacity: 0, x: -40 }}
+            className="contact-redesign-left"
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2>READY TO WORK WITH ME?</h2>
-          </motion.div>
-
-          {/* Bottom Left */}
-          <motion.div
-            className="contact-ai-bottom-left"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="contact-ai-desc">
-              If my work aligns with your vision, I would love to collaborate and create content that ranks, informs, and builds meaningful connections.
+            <h2 className="contact-redesign-title">GET IN TOUCH</h2>
+            <p className="contact-redesign-desc">
+              If my work aligns with your vision, I would love to collaborate and create content that ranks, informs, and builds meaningful connections. Let’s create work that truly makes an impact.
             </p>
-            <p className="contact-ai-desc">
-              From logistics processes and technical insights to wellness storytelling, I focus on writing that serves both brands and people with clarity, strategy, and purpose.
-            </p>
-          </motion.div>
-
-          {/* Right Side */}
-          <motion.div
-            className="contact-ai-right"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="contact-ai-cta">
-              Let’s create work that truly makes an impact - Reach out today
+            <a href="mailto:anuinamdar.ai@gmail.com" className="contact-redesign-btn">
+              REACH OUT
+            </a>
+            <div className="contact-redesign-info">
+              <p>Email Id - <a href="mailto:anuinamdar.ai@gmail.com">anuinamdar.ai@gmail.com</a></p>
+              <p>Mobile No: - <a href="tel:9945840866">9945840866</a></p>
             </div>
-
-            <div className="contact-ai-links">
-              <a href="#" className="ai-link" target="_blank" rel="noreferrer">
-                <span>View Full Portfolio:</span> Anusha - SEO Content Writing Portfolio
-              </a>
-              <a href="mailto:anuinamdar.ai@gmail.com" className="ai-link">
-                <span>Email Id -</span> anuinamdar.ai@gmail.com
-              </a>
-              <a href="tel:9945840866" className="ai-link">
-                <span>Mobile No: -</span> 9945840866
-              </a>
+          </motion.div>
+          <motion.div
+            className="contact-redesign-right"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          >
+            <div className="contact-img-wrapper">
+              <img src="/ida.png" alt="Contact Anusha" />
             </div>
           </motion.div>
         </div>
