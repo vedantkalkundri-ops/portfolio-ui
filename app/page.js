@@ -724,34 +724,63 @@ export default function Home() {
       {/* ── REDESIGNED CONTACT SECTION ── */}
       <section id="contact" className="contact-redesign-section">
         <AIThinkingOrb />
-        <div className="contact-redesign-container">
+        <div className="contact-quad-container">
+          {/* Top Left */}
           <motion.div
-            className="contact-redesign-left"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="contact-quad-tl"
+            initial={{ opacity: 0, x: -50, y: -20 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="contact-redesign-title">GET IN TOUCH</h2>
-            <p className="contact-redesign-desc">
-              If my work aligns with your vision, I would love to collaborate and create content that ranks, informs, and builds meaningful connections. Let’s create work that truly makes an impact.
-            </p>
-            <a href="mailto:anuinamdar.ai@gmail.com" className="contact-redesign-btn">
-              REACH OUT
-            </a>
-            <div className="contact-redesign-info">
-              <p>Email Id - <a href="mailto:anuinamdar.ai@gmail.com">anuinamdar.ai@gmail.com</a></p>
-              <p>Mobile No: - <a href="tel:9945840866">9945840866</a></p>
-            </div>
+            <h2 className="contact-quad-title">READY TO WORK TOGETHER?</h2>
           </motion.div>
+
+          {/* Top Right */}
           <motion.div
-            className="contact-redesign-right"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="contact-quad-tr"
+            initial={{ opacity: 0, x: 50, y: -20 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          >
+            <h3 className="contact-quad-cta">
+              Let’s create work that truly makes an impact - Reach out today
+            </h3>
+          </motion.div>
+
+          {/* Bottom Left */}
+          <motion.div
+            className="contact-quad-bl"
+            initial={{ opacity: 0, x: -50, y: 20 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
-            {/* Empty right side to let the background orb be visible */}
+            <p className="contact-quad-desc">
+              If my work aligns with your vision, I would love to collaborate and create content that ranks, informs, and builds meaningful connections.
+            </p>
+            <p className="contact-quad-desc">
+              From logistics processes and technical insights to wellness storytelling, I focus on writing that serves both brands and people with clarity, strategy, and purpose.
+            </p>
+          </motion.div>
+
+          {/* Bottom Right */}
+          <motion.div
+            className="contact-quad-br"
+            initial={{ opacity: 0, x: 50, y: 20 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+          >
+            <div className="contact-quad-info">
+              <a href="mailto:anuinamdar.ai@gmail.com" className="quad-link">
+                <span>Email Id -</span> anuinamdar.ai@gmail.com
+              </a>
+              <a href="tel:9945840866" className="quad-link">
+                <span>Mobile No: -</span> 9945840866
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
