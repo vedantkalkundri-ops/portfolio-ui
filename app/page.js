@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TopoBackground from "./components/Topobackground";
 import IntroAnimation from "./components/IntroAnimation";
+import AIThinkingOrb from "./components/AIThinkingOrb";
 
 const projects = [
   {
@@ -722,7 +723,7 @@ export default function Home() {
       </section>
       {/* ── REDESIGNED CONTACT SECTION ── */}
       <section id="contact" className="contact-redesign-section">
-        <div className="contact-redesign-wave"></div>
+        <AIThinkingOrb />
         <div className="contact-redesign-container">
           <motion.div
             className="contact-redesign-left"
@@ -750,9 +751,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
-            <div className="contact-img-wrapper">
-              <img src="/ida.png" alt="Contact Anusha" />
-            </div>
+            {/* Empty right side to let the background orb be visible */}
           </motion.div>
         </div>
       </section>

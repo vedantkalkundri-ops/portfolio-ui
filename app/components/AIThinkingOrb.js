@@ -16,16 +16,19 @@ export default function AIThinkingOrb() {
     // Add a subtle fog to fade dots further away
     scene.fog = new THREE.FogExp2(0x050510, 0.15);
 
+    const width = mount.clientWidth;
+    const height = mount.clientHeight;
+
     const camera = new THREE.PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      width / height,
       0.1,
       1000
     );
     camera.position.z = 4;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Performance optimization
     mount.appendChild(renderer.domElement);
 
@@ -111,9 +114,12 @@ export default function AIThinkingOrb() {
 
     // 4. Resize Handler
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
+      if (!mountRef.current) return;
+      const w = mountRef.current.clientWidth;
+      const h = mountRef.current.clientHeight;
+      camera.aspect = w / h;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(w, h);
     };
     window.addEventListener("resize", handleResize);
 
