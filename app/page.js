@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TopoBackground from "./components/Topobackground";
 import IntroAnimation from "./components/IntroAnimation";
-import AIThinkingOrb from "./components/AIThinkingOrb";
 
 const projects = [
   {
@@ -723,7 +722,6 @@ export default function Home() {
       </section>
       {/* ── REDESIGNED CONTACT SECTION ── */}
       <section id="contact" className="contact-redesign-section">
-        <AIThinkingOrb />
         <div className="contact-quad-container">
           {/* Top Left */}
           <motion.div
