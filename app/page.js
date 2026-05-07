@@ -82,8 +82,8 @@ const projects = [
     {
     number: "04",
     title: "Wellness & Nutrition Content",
-    desc: "...",
-    reason: "...",
+    desc: "I create informative, compassionate content around health, traditional foods, mindful eating, and natural wellness practices. This content aims to educate readers while respecting cultural roots and encouraging conscious, balanced lifestyle choices that feel approachable and trustworthy.",
+    reason: "It helps people reconnect with their bodies, make conscious everyday choices, and build healthier lives rooted in understanding, balance, and long-term well-being.",
     groups: [
       {
         label: "OLRAA - Delivering Indian Goodness Globally",
