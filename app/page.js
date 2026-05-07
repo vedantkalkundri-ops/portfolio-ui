@@ -79,20 +79,20 @@ const projects = [
       }
     ]
   },
-  {
+    {
     number: "04",
     title: "Wellness & Nutrition Content",
-    desc: "I create informative, compassionate content around health, traditional foods, mindful eating, and natural wellness practices. This content aims to educate readers while respecting cultural roots and encouraging conscious, balanced lifestyle choices that feel approachable and trustworthy.",
-    reason: "It helps people reconnect with their bodies, make conscious everyday choices, and build healthier lives rooted in understanding, balance, and long-term well-being.",
+    desc: "...",
+    reason: "...",
     groups: [
       {
         label: "OLRAA - Delivering Indian Goodness Globally",
         links: [
-          { name: "Supplements - Main Category Page", url: "https://olraa.com/en-in/supplements" },
-          { name: "Skin, Hair & Nail Supplements - Category Page", url: "https://olraa.com/en-in/supplements/skin-hair-nail-health" },
-          { name: "Condiments - Pickles - Sub Category", url: "https://olraa.com/en-in/food/condiments/pickles" },
-          { name: "Women Care Supplements - Category Page", url: "https://olraa.com/en-in/supplements/women-care" },
-          { name: "Weight Management - Category Page", url: "https://olraa.com/en-in/supplements/weight-management" }
+          { name: "Supplements - Main Category Page", url: "https://olraa.com/us/collections/supplements" },
+          { name: "Skin, Hair & Nail Supplements - Category Page", url: "https://olraa.com/us/collections/supplements/skin-hair-nail-health" },
+          { name: "Condiments - Pickles - Sub Category", url: "https://olraa.com/us/collections/food/condiments/pickles" },
+          { name: "Women Care Supplements - Category Page", url: "https://olraa.com/us/collections/supplements/women-care" },
+          { name: "Weight Management - Category Page", url: "https://olraa.com/us/collections/supplements/weight-management" },
         ]
       }
     ]
@@ -645,9 +645,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── PROJECTS SECTION ── */}
 
-      {/* ── PROJECTS SECTION ── */}
       {/* ── PROJECTS SECTION (REDESIGN) ── */}
       <section id="projects" className="projects-redesign-section">
         <div className="projects-redesign-shell">
