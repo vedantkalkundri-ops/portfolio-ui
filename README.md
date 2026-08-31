@@ -85,62 +85,6 @@ The website is designed to provide a consistent experience across different scre
 * Mobile menu animations
 * Flexible content layouts
 
-### Interactive Project Showcase
-
-The portfolio provides an interactive showcase of published content across different platforms and industries.
-
-Featured work includes content published for:
-
-* Velocity Express
-* The Desi Food
-* Omnity
-* OLRAA
-
-Users can explore published articles and understand the range of industries covered.
-
-### Professional Experience
-
-The portfolio highlights professional achievements and measurable content production results.
-
-Key metrics include:
-
-* 610+ SEO-optimized pages published
-* SEO content across multiple industries
-* Search visibility-focused content strategies
-* Logistics, wellness, lifestyle, and e-commerce experience
-
-### Services Showcase
-
-The portfolio presents the major content services offered, including:
-
-* SEO Content Writing
-* Website Content
-* Product Descriptions
-* Brand Storytelling
-* Technical Content
-* Wellness Writing
-* Content Optimization
-
-### Tools & Research Stack
-
-The portfolio showcases the professional tools used for research, SEO, writing, and content optimization.
-
-* SEMrush
-* Ubersuggest
-* Google Keyword Planner
-* Grammarly
-* Google Docs
-
-### Direct Contact
-
-The contact section provides direct communication options for potential clients and collaborators.
-
-* Email contact
-* Phone contact
-* Client inquiry interface
-* Quick-access contact actions
-
----
 
 ## Architecture
 
@@ -170,7 +114,6 @@ flowchart TD
     subgraph VisualSystem [Visual System]
         Canvas --> Topo[Topographic Background]
         Canvas --> Particles[Particle System]
-        Three --> Orb[3D AI Orb]
         Motion --> Animations[UI Animations]
     end
 
@@ -204,7 +147,6 @@ Visual Experience     Content Sections
   |
   +--> Topographic Canvas
   +--> Particle Effects
-  +--> 3D Orb
   +--> Intro Animation
   |
   v
@@ -295,8 +237,7 @@ The portfolio's visual identity is built around several major design principles.
 | ------------------ | ------------------------------------- |
 | Topographic Canvas | Dynamic background visual             |
 | Particle System    | Adds depth and motion                 |
-| Glassmorphism      | Modern UI surface treatment           |
-| 3D Orb             | Interactive visual identity           |
+| Glassmorphism      | Modern UI surface treatment           |          |
 | Fluid Typography   | Responsive editorial presentation     |
 | Motion System      | Smooth page and component transitions |
 | CSS Variables      | Centralized design control            |
@@ -317,8 +258,6 @@ portfolio-ui/
 │   │   ├── Topobackground.js
 │   │   ├── Particles.js
 │   │   ├── EduSlideshow.js
-│   │   ├── AiOrb.js
-│   │   └── AIThinkingOrb.js
 │   │
 │   ├── globals.css
 │   ├── layout.js
@@ -385,22 +324,6 @@ Recommended practices for future development include:
 
 ---
 
-## Future Improvements
-
-Potential enhancements include:
-
-* CMS integration for managing published articles
-* Dynamic blog section
-* Advanced SEO metadata management
-* Contact form with server-side processing
-* Analytics dashboard
-* Content filtering by industry
-* Searchable article portfolio
-* More interactive 3D experiences
-* Accessibility improvements
-* Performance monitoring
-
----
 
 <div align="center">
 
