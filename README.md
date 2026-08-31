@@ -343,123 +343,12 @@ portfolio-ui/
 └── README.md
 ```
 
----
 
-## Getting Started
-
-### Prerequisites
-
-Make sure the following are installed:
-
-* **Node.js 18+**
-* **npm**
-* Git
-
-Verify Node.js:
-
-```bash
-node --version
-```
-
-Verify npm:
-
-```bash
-npm --version
-```
-
----
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/vedantkalkundri-ops/portfolio-ui.git
-
-cd portfolio-ui
-```
-
----
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
----
-
-### 3. Start Development Server
-
-```bash
-npm run dev
-```
-
-The development server will start at:
-
-```text
-http://localhost:3000
-```
-
-Open the URL in a modern web browser.
-
----
-
-## Available Scripts
-
-### Development
-
-```bash
-npm run dev
-```
-
-Starts the Next.js development server with hot reloading.
-
-### Production Build
-
-```bash
-npm run build
-```
-
-Creates an optimized production build.
-
-### Production Server
-
-```bash
-npm run start
-```
-
-Starts the application using the production build.
-
-### Lint
-
-```bash
-npm run lint
-```
-
-Runs ESLint checks across the project.
-
----
 
 ## Deployment
 
 The portfolio is deployed using **[Vercel](https://vercel.com/)**.
 
-### Production Deployment
-
-The application can be deployed directly through Vercel by connecting the GitHub repository.
-
-Typical deployment flow:
-
-```text
-GitHub Repository
-       |
-       v
-     Vercel
-       |
-       v
-Next.js Build
-       |
-       v
-Production Website
 ```
 
 ### Live Portfolio
@@ -516,23 +405,8 @@ Potential enhancements include:
 
 ---
 
-## Author & Credits
-
-### Content & Profile
-
-**Anusha Inamdar**
-
-SEO Content Writer & Strategist
-
-### Development
-
-Designed and developed as a modern personal branding portfolio using **Next.js, React, Framer Motion, Three.js, and custom CSS**.
-
----
-
-
 <div align="center">
 
-**A client Work**
+**Made with ❤️ for a client.**
 
 </div>
