@@ -343,13 +343,10 @@ portfolio-ui/
 └── README.md
 ```
 
-
-
 ## Deployment
 
 The portfolio is deployed using **[Vercel](https://vercel.com/)**.
 
-```
 
 ### Live Portfolio
 
